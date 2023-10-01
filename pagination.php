@@ -82,7 +82,7 @@ if ($st_page > 5) {
     $vars = ['page' => 1, 'values' => 5];
     $querystring = http_build_query($vars);
     printf('<li class="page-item"><a class="page-link" href="pagination.php?%s">First</a></li>', $querystring);
-    printf('<li class="page-item"><a class="page-link" href="pagination.php?values=%d">&laquo;</a></li>', $st_page - 5);
+    printf('<li class="page-item"><a class="page-link" href="pagination.php?values=%d">Prev</a></li>', $st_page - 5);
 }
 
 for ($i = $start_loop; $i < $end_loop; ++$i) {
@@ -96,7 +96,7 @@ for ($i = $start_loop; $i < $end_loop; ++$i) {
 if ($__page - 1 != $start_loop) {
     $vars = ['page' => $last_page, 'values' => $last_val];
     $querystring = http_build_query($vars);
-    printf('<li class="page-item"><a class="page-link" href="pagination.php?values=%d">&raquo;</a></li>', $st_page + 5);
+    printf('<li class="page-item"><a class="page-link" href="pagination.php?values=%d">Next</a></li>', $st_page + 5);
     printf('<li class="page-item"><a class="page-link" href="pagination.php?%s">Last</a></li>', $querystring);
 }
 ?>
